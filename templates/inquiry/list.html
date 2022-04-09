@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+
+<a href="{% url 'Registration' %}" class="btn btn-primary"> Create </a>
+
+{% for object in object_list %}
+<div class="card">
+  <div class="card-header">
+    {{ object.product_start_date}} To {{object.product_end_date}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ object.customer_name}}</h5>
+    <p class="card-text">Mo: {{ object.email}}</p>
+    <p class="card-text">Email: {{ object.phone_no}}</p>
+    <p class="card-text">{{ object.complain_message}}</p>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}
